@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTMLdows | Lockscreen</title>
+     	
+   </head>
+ 
+
+   <style>
+  
+
+  
+body {
+  background-image: url('images/lockbg.jpg'); no-repeat center center fixed
+    background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+
+
+     }
+
+   
+   
+
+
+
+h1 {
+  color: white;
+              font-family: helvetica;
+
+}
+
+p {
+  color: white;
+              font-family: helvetica;
+
+}
+    
+   .center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+#bottom { 
+                position:absolute;                  
+                bottom:0;                          
+                left:0;
+ 
+            }
+    #right { 
+                position:absolute;                  
+                bottom:0;                          
+                right:0;                          
+            }
+#time {
+text-align: center;
+width: 99%;
+}
+
+  </style>
+  
+<h1>
+    <div id="bottom">Welcome to HTMLdows. <br>Press enter to login.</div>
+
+  </h1>
+<h1>
+    
+  <div id="right">HTMLdows | Build 123</div>
+
+
+  </h1>
+
+     
+     <script>
+    document.body.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+        window.location.replace("desktop.html");
+    }
+});
+       </script>
+   
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('time').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<body onload="startTime()">
+
+ <h1><div id="time" class="center"></div><h1>
+  
+  
+
+</html>

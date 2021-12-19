@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTMLdows</title>
+		<link href="layout.css" rel="stylesheet" type="text/css">
+		<link href="lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+		<link href="lib/os-gui/windows-98.css" rel="stylesheet" type="text/css">
+		<link href="classic.css" rel="stylesheet" type="text/css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=LbWArJzeO7">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=LbWArJzeO7">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=LbWArJzeO7">
+		<link rel="manifest" href="/site.webmanifest?v=LbWArJzeO7">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg?v=LbWArJzeO7" color="#5bbad5">
+		<link rel="shortcut icon" href="/favicon.ico?v=LbWArJzeO7">
+		<meta name="apple-mobile-web-app-title" content="98.js">
+		<meta name="application-name" content="98.js">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="theme-color" content="#008080">		
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<!-- For Wayback Machine, hopefully get it to save these resources -->
+		<link rel="prefetch" href="/filesystem-index.json">
+		<link rel="prefetch" href="/desktop/CREDITS.txt">
+		<link rel="prefetch" href="/programs/notepad/index.html">
+	</head>
+	<body>
+		<div class="desktop" style="background-image: url(images/background.jpg); background-size: cover; background-position: center;"></div>
+		<div class="taskbar">
+			<button class="start-button toggle" title="Click here to begin.">
+				<img src="images/start.png"/><b></b>
+			</button>
+			<div class="taskbar-divider"></div>
+			<!-- TODO: pinned apps and resizing handles -->
+			<div class="tasks"></div>
+			<div class="taskbar-divider"></div>
+			<div class="tray inset-shallow">
+				<div class="tray-icons">
+					<img class="tray-icon" src="images/icons/task-scheduler-16x16.png" title="Task Scheduler is not ready." onclick="alert('Good day to you!')">
+					<img class="tray-icon" src="images/icons/audio-okay-16x16.png" title="Volume" onclick="alert('Have a good day!')">
+				</div>
+				<div class="taskbar-time"></div>
+			</div>
+		</div>
+		<div class="start-menu outset-deep" hidden style="display: none;">
+			<div class="start-menu-titlebar"></div>
+			<div class="start-menu-content">
+				<h1>Start</h1>
+        <a href="programs/bsod.html">Crash the system</a><br>
+        <a href="lockscreen.html">Lock</a><br>
+        <a href="index.html">Shutdown</a>
+			</div>
+		</div>
+		<script src="lib/pep.js"></script>
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/browserfs.js"></script>
+		<script src="lib/konami.js"></script>
+		<script src="lib/os-gui/parse-theme.js"></script>
+		<script src="lib/os-gui/$MenuBar.js"></script>
+		<script src="src/3d-fun.js"></script>
+		<script src="src/helpers.js"></script>
+		<script src="src/filesystem-setup.js"></script>
+		<script src="src/$Window.js"></script>
+		<script src="src/$IframeWindow.js"></script>
+		<script src="src/Task.js"></script>
+		<script src="src/$taskbar-time.js"></script>
+		<script src="src/$start-menu.js"></script>
+		<script src="src/$FolderView.js"></script>
+		<script src="src/$FolderViewIcon.js"></script>
+		<script src="src/$desktop.js"></script>
+		<script src="src/visualizer-overlay.js"></script>
+		<script src="src/programs.js"></script>
+
+		<!-- TODO: DRY -->
+		<svg style="position: absolute; pointer-events: none; bottom: 100%;">
+			<defs>
+				<filter id="disabled-inset-filter" x="0" y="0" width="1px" height="1px">
+					<feColorMatrix
+						in="SourceGraphic"
+						type="matrix"
+						values="
+							1 0 0 0 0
+							0 1 0 0 0
+							0 0 1 0 0
+							-1000 -1000 -1000 1 0
+						"
+						result="black-parts-isolated"
+					/>
+					<feFlood result="shadow-color" flood-color="var(--ButtonShadow)"/>
+					<feFlood result="hilight-color" flood-color="var(--ButtonHilight)"/>
+					<feOffset in="black-parts-isolated" dx="1" dy="1" result="offset"/>
+					<feComposite in="hilight-color" in2="offset" operator="in" result="hilight-colored-offset"/>
+					<feComposite in="shadow-color" in2="black-parts-isolated" operator="in" result="shadow-colored"/>
+					<feMerge>
+						<feMergeNode in="hilight-colored-offset"/>
+						<feMergeNode in="shadow-colored"/>
+					</feMerge>
+				</filter>
+			</defs>
+		</svg>
+	</body>
+</html>

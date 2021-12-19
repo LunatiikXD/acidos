@@ -1,0 +1,155 @@
+
+.desktop {
+	background: var(--Background);
+}
+.taskbar {
+	outline: 1px solid rgb(30,30,30);
+	border-top: 1px solid rgb(30,30,30);
+	background: rgb(30,30,30);
+	color: rgb(30,30,30);
+  opacity: 0.8;
+}
+.taskbar-divider {
+	border-left: 1px solid rgb(30,30,30);
+	border-right: 1px solid rgb(30,30,30);
+  opacity: 0.8;
+}
+.taskbar-time {
+	font-family: sans-serif;
+	font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+	font-size: 12px;
+  color: white;
+  background: rgb(30,30,30);
+
+}
+.start-menu-titlebar {
+	/* background-image: url("images/start-menu-side.png"); */
+	/* background-image: url("images/start-menu-side-98-js.png"); */
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color: #000080;
+}
+.start-menu li a,
+.start-menu .back-link {
+	display: block;
+	padding: 5px 0;
+	color: blue !important; /* regardless of :visited */
+}
+.start-menu li a:before,
+.start-menu .back-link:before,
+.the-thing-heading:before {
+	content: "»";
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 5px;
+}
+.start-menu .back-link:before {
+	content: "«"
+}
+.the-thing-heading {
+	/* font-size: 1em; */
+}
+.windows-cant-do-it-you-can {
+	margin-top: 2em;
+	/* background: white;
+	padding: 5px;
+	border: inset 1px; */
+}
+.task.selected {
+	font-weight: bold;
+}
+.desktop-icon .title {
+	margin-top: 5px;
+	font-family: sans-serif;
+	font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+	/*font-size: 10px;*/
+	font-size: 8pt;
+	background: var(--Background);
+	color: white;
+	position: relative;
+}
+.folder-view.focused .desktop-icon.selected .title {
+	background: var(--Hilight);
+	color: var(--HilightText);
+}
+.folder-view.focused .desktop-icon.focused .title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	border: 1px dotted #ffffff;
+	mix-blend-mode: exclusion;
+}
+.desktop-icon .selection-effect {
+	display: none;
+}
+.folder-view.focused .desktop-icon.selected .selection-effect {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	filter: drop-shadow(32px 0 0 var(--Hilight));
+	transform: translateX(-32px);
+	clip-path: polygon(100% 0, 200% 0, 200% 100%, 100% 100%);
+	opacity: 0.5;
+}
+.desktop-icon.shortcut .icon-wrapper {
+	position: relative;
+}
+.desktop-icon.shortcut .icon-wrapper:after {
+	content: url("images/icons/shortcut-32x32.png");
+	position: absolute;
+	left: 0;
+	vertical-align: bottom;
+}
+.folder-view .marquee {
+	border: 1px dotted #ffffff;
+	mix-blend-mode: exclusion;
+	/* TODO: fallback for browsers that don't support mix-blend-mode (something like #FF7F7F)... Edge doesn't support @supports either :/ */
+	z-index: 1;
+}
+
+.help-window .item {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+	padding: 0 2px;
+	position: relative; /* for ::after */
+}
+.help-window .item:hover {
+	text-decoration: underline;
+	color: #0000FF;
+	cursor: pointer;
+}
+.help-window li:before {
+	background-image: url("../../images/help-icons.png");
+}
+.help-window:not(.focused) .item.selected {
+	background-color: var(--ButtonFace);
+	color: var(--ButtonText); /* ?? */
+}
+.help-window.focused .item.selected {
+	background-color: var(--Hilight);
+	color: var(--HilightText);
+	/* @TODO: separate focus state of the item */
+	outline: 1px dotted black;
+	outline-offset: -1px;
+}
+/* @TODO: separate focus state of the item; while mouse down, the main highlight does not move with the arrow keys but this does, among other differences */
+/* .help-window.focused .item.selected::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border: 1px dotted white;
+	mix-blend-mode: difference;
+} */
+
+* {
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
