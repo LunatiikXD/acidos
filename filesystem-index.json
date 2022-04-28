@@ -7,8 +7,10 @@
   "CNAME": null,
   "CONTRIBUTING.md": null,
   "desktop": {
-    "CREDITS.txt": null
-    },
+    "CREDITS.txt": null,
+    "whatsnew.txt": null
+   
+  },
   "favicon-16x16.png": null,
   "favicon-32x32.png": null,
   "favicon.ico": null,

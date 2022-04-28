@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="terminal.js"></script>
+<link rel="stylesheet" href="terminal.css"/>
+</head>
+<body>
+  <script>
+   
+$('body').terminal({
+    hello: function() {
+        this.echo("Hello user! Welcome to this terminal.");
+    },
+   help: function() {
+        this.echo("Help\n\nver: Show acidOS's version.\nhello: Says hi to you!");
+    },
+   ver: function() {
+        this.echo('acidOS | Build 2032');
+    }
+  
+}, {
+    greetings: 'acidOS build 2032'
+});
+    
+
+</script><script>  
+  
+  </script>
+</body>
+</html>

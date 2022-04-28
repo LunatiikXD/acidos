@@ -84,7 +84,7 @@ var go_to = function(address){
 		if(!address.match() && !address.startsWith(window.location.origin)){
 			if (address.match()) {
 				address = "" + address;
-			} else if (!address.match(/^https?:\/\/(www\.)?(copy.sh)/)) {
+			} else if (!address.match()) {
 				address = "" + address;
 			}
 		}

@@ -244,11 +244,12 @@ button:not(.lightweight).toggle.selected {
 
 .os-window .window-titlebar,
 body > .window-titlebar {
-	background: rgb(255, 255, 255);
+	background: rgb(46, 64, 83);
 	background: var(--ActiveTitle);
-	background: linear-gradient(to right, rgb(0, 128, 255) 0%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(to right, rgb(46, 64, 83) 0%, rgb(46, 64, 83) 100%);
+  opacity: 0.8;
 	
-	color: rgb(255, 255, 255);
+	color: rgb(46, 64, 83);
 	
 	color: var(--TitleText);
 }
@@ -256,18 +257,23 @@ body > .window-titlebar {
 .os-window .window-titlebar, body > .window-titlebar {
 	font-family: 'Segoe UI', sans-serif;
 	font-size: 12px;
+    opacity: 0.8;
+
 }
 
 .os-window .window-titlebar,
 body > .window-titlebar {
 	font-weight: bold;
+    opacity: 0.8;
+
 }
 .os-window:not(.focused) .window-titlebar {
 	background: darkgray;
-	background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
-	background: linear-gradient(to right, var(--InactiveTitle) 0%, var(--GradientInactiveTitle) 100%);
+  	background: linear-gradient(to right, rgb(46, 64, 83) 0%, rgb(46, 64, 83) 100%);
+    opacity: 0.8;
 
-	color: rgb(192, 192, 192);
+
+	color: rgb(46, 64, 83);
 
 	color: var(--InactiveTitleText);
 }
@@ -329,7 +335,6 @@ body > .window-titlebar {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	padding-left: 2px;
-  color: black;
 }
 .window-close-button {
 	/* display: block !important; */

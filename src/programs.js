@@ -360,6 +360,37 @@ function Minesweeper(){
 	return new Task($win);
 }
 
+function Calc(){
+	var $win = new $IframeWindow({
+		src: "programs/calc/index.html",
+		icon: "calc",
+		title: "Calculator",
+		innerWidth: 500,
+		innerHeight: 382
+	});
+	return new Task($win);
+}
+function WinVM(){
+	var $win = new $IframeWindow({
+		src: "programs/winvm/index.html",
+		icon: "winvm",
+		title: "Windows VM",
+		innerWidth: 1024,
+		innerHeight: 768
+	});
+	return new Task($win);
+}
+function Terminal(){
+	var $win = new $IframeWindow({
+		src: "programs/terminal/index.html",
+		icon: "term",
+		title: "Terminal",
+		innerWidth: 500,
+		innerHeight: 382
+	});
+	return new Task($win);
+}
+
 function SoundRecorder(file_path){
 	// TODO: DRY the default file names and title code (use document.title of the page in the iframe, in $IframeWindow)
 	var document_title = file_path ? file_name_from_path(file_path) : "Sound";
@@ -834,6 +865,7 @@ add_icon_not_via_filesystem({
 	icon: "my-documents-folder",
 	open: function(){ executeFile("/my-documents"); },
 });
+
 add_icon_not_via_filesystem({
 	title: "Network Neighborhood",
 	icon: "network",
@@ -852,7 +884,7 @@ add_icon_not_via_filesystem({
 add_icon_not_via_filesystem({
 	title: "Internet Explorer",
 	icon: "internet-explorer",
-	open: function(){ Explorer("https://www.bing.com/"); }
+	open: function(){ Explorer("https://www.bing.com"); }
 });
 add_icon_not_via_filesystem({
 	title: "Paint",
@@ -866,6 +898,19 @@ add_icon_not_via_filesystem({
 	open: Minesweeper,
 	shortcut: true
 });
+
+add_icon_not_via_filesystem({
+	title: "Terminal",
+	icon: "term",
+	open: Terminal,
+	shortcut: true
+});
+add_icon_not_via_filesystem({
+	title: "Windows VM",
+	icon: "winvm",
+	open: WinVM,
+	shortcut: true
+});
 add_icon_not_via_filesystem({
 	title: "Sound Recorder",
 	icon: "speaker",
@@ -876,6 +921,12 @@ add_icon_not_via_filesystem({
 	title: "Notepad",
 	icon: "notepad",
 	open: Notepad,
+	shortcut: true
+});
+add_icon_not_via_filesystem({
+	title: "Calculator",
+	icon: "calc",
+	open: Calc,
 	shortcut: true
 });
 add_icon_not_via_filesystem({
