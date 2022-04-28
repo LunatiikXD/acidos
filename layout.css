@@ -41,7 +41,8 @@ html, body {
 }
 .taskbar {
 	position: absolute;
-	z-index: 2;
+  top: 1px;
+	z-index: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -54,8 +55,6 @@ html, body {
 .taskbar-divider,
 .tray {
 	margin: 2px;
-  opacity: 0.8;
-  bacground-color: rgb(30,30,30)
 }
 .taskbar-divider {
 	margin-right: 0px;
@@ -79,8 +78,6 @@ html, body {
 .taskbar .start-button {
 	flex-shrink: 0;
 	padding: 2px 4px;
-  opacity: 0.8;
-  background: rgb(30,30,30);
 }
 .tray {
 	display: flex;
@@ -96,8 +93,10 @@ html, body {
 	display: flex;
 	align-items: center;
 	margin-left: 2px; /* XXX basically 1px, but 2px because of the way the border is done */
+  background: #585858;
   opacity: 0.8;
-  background-color: rgb(30,30,30)
+
+
 }
 .tray-icon {
 	margin-left: 1px;

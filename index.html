@@ -1,36 +1,96 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="7;url=lockscreen.html" />
-
-    <title>HTMLdows Startup</title>
-    <style>
-      body {
-        background-color: black;
-      }
-      .windows {
-  position: absolute;
-  top: 25%;
-  width: 99%;
-  text-align: center;
-  font-size: 18px;
-}
-      .spinning {
-  position: absolute;
-  top: 75%;
-  width: 99%;
-  text-align: center;
-  font-size: 18px;
-}
-    </style>
-  </head>
+   <head>
+      <title>acidOS | Lock Screen</title>
+     	
+   </head>
+  <style>
   
-  <body>
-      <div class="windows">
-        <img src="images/logo/sys_logo.png" width="150px" alt="Windows" />
-    </div>
-        <div class="spinning">
-        <img src="images/loading.gif" width="150px" alt="Windows" />
-    </div>
+body {
+  background-image: url('https://cdn.glitch.com/b7351dc8-ac3f-4fae-ae80-2e90aa909cc0%2Flonghorn.jpg?v=1604845913617');
+    background-repeat: no-repeat;
+          background-size: cover !important;
 
-  </body>
+
+
+}
+
+h1 {
+  color: white;
+              font-family: helvetica;
+
+}
+
+p {
+  color: white;
+              font-family: helvetica;
+
+}
+    
+   .center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+#bottom { 
+                position:absolute;                  
+                bottom:0;                          
+                left:0;                          
+            }
+    #right { 
+                position:absolute;                  
+                bottom:0;                          
+                right:0;                          
+            }
+#time {
+text-align: center;
+width: 99%;
+}
+
+  </style>
+ 
+  
+<center><h1>
+  <div id="bottom">Welcome to acidOS. <br>Press enter to login.</div>
+
+  </h1></center>
+  <center><h1>
+    
+  <div id="right">acidOS | Build 2032</div>
+
+  </h1></center>
+
+     
+     <script>
+    document.body.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+        window.location.replace("desktop.html");
+    }
+});
+       </script>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('time').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<body onload="startTime()">
+
+ <h1><div id="time" class="center"></div><h1>
+  
+  
+
 </html>

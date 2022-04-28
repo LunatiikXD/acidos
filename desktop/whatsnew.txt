@@ -1,0 +1,6 @@
+Build 2032:
+SURPRISE!! acidOS now supports Browserling! (Windows 10 VM)
+
+Build 2030:
+We've hit RTM 🥳
+Adding a Terminal
